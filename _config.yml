@@ -1,6 +1,7 @@
 title: AI KIA Blog
 description: "Exploring how AI replaces human tasks."
 remote_theme: mmistakes/minimal-mistakes
+head_custom: head-custom.html
 
 plugins:
   - jekyll-feed

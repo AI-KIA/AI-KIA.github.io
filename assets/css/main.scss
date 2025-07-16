@@ -9,3 +9,10 @@ body {
   color: #eee;
   font-family: "Fira Code", monospace;
 }
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+}

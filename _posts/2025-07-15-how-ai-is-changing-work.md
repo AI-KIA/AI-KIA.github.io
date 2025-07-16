@@ -5,6 +5,8 @@ date: 2025-07-16
 categories: [ai, automation, future-of-work]
 slug: how-ai-is-changing-work
 ---
+
+
 <img src="/assets/blogs/{{ page.slug }}-1.jpg" alt="AI at work" style="max-width: 100%; height: auto;" />
 
 {% include figure image_path="/assets/blogs/{{ page.slug }}-1.jpg" alt="AI at work" %}

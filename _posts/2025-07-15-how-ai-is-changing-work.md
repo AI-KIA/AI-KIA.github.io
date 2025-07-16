@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "How AI is Changing Work"
 date: 2025-07-16
 categories: [ai, automation, future-of-work]

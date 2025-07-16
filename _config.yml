@@ -1,5 +1,7 @@
 title: AI KIA Blog
 description: "Exploring how AI replaces human tasks."
+baseurl: "/blog/"
+url: "http://coldbrue.com" 
 remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-remote-theme

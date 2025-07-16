@@ -1,18 +1,9 @@
 ---
 ---
-
 @import "minimal-mistakes/skins/dark";
 @import "minimal-mistakes";
 
+/* Test style: body background */
 body {
-  background-color: #111;
-  color: #eee;
-  font-family: "Fira Code", monospace;
-}
-
-.responsive-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1em auto;
+  background-color: #111 !important;
 }

@@ -9,3 +9,6 @@ plugins:
 minimal_mistakes_skin: "dark"
 head_custom: head-custom.html
 theme_switch: true
+highlighter: rouge
+syntax_highlight: true
+

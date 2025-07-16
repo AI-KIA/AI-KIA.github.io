@@ -8,3 +8,4 @@ plugins:
   - jekyll-sitemap
 minimal_mistakes_skin: "dark"
 head_custom: head-custom.html
+theme_switch: true

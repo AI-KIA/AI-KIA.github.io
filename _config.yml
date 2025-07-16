@@ -5,9 +5,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-include:
-  - _includes/head-custom.html
-
+# Tell theme to include our custom head content
 defaults:
   -
     scope:
@@ -15,3 +13,8 @@ defaults:
     values:
       include:
         head-custom: "head-custom.html"
+
+
+
+
+

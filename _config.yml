@@ -1,0 +1,6 @@
+title: AI KIA Blog
+description: Exploring how AI replaces human tasks.
+url: "https://customdomain.com"
+theme: minima
+plugins:
+  - jekyll-feed

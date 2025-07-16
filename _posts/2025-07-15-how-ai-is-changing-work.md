@@ -5,7 +5,8 @@ date: 2025-07-16
 categories: [ai, automation, future-of-work]
 slug: how-ai-is-changing-work
 ---
-![AI at work](/assets/blogs/{{ page.slug }}-1.jpg)
+![AI at work](/assets/blogs/{{ page.slug }}-1.jpg){: .responsive-img }
+
 AI is rapidly transforming industries by automating repetitive tasks, enabling faster decision-making, and even creating content. In this article, we explore real-world examples of how AI tools are reshaping workflows across different professions.
 
 ## Key Areas of Impact

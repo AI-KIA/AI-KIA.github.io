@@ -2,9 +2,16 @@ title: AI KIA Blog
 description: "Exploring how AI replaces human tasks."
 remote_theme: mmistakes/minimal-mistakes
 head_custom: head-custom.html
-# Minimal Mistakes theme settings
 include:
-  - _includes/head-custom.html
+  - head-custom.html
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      include:
+        head-custom: "head-custom.html"
 
 plugins:
   - jekyll-feed

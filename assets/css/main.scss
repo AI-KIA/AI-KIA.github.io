@@ -132,6 +132,14 @@ body.layout-categories .page__content {
   box-shadow: none;
 }
 
+/* Allow full-width taxonomy layout */
+.archive {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
 .archive .page__content {
   max-width: 100% !important;
   padding: 0 !important;
@@ -139,7 +147,7 @@ body.layout-categories .page__content {
   box-shadow: none;
 }
 
-/* Style the tag cloud/grid better */
+/* Taxonomy UI */
 .taxonomy__index {
   display: flex;
   flex-wrap: wrap;
@@ -166,15 +174,3 @@ body.layout-categories .page__content {
   background-color: #262626;
   color: #ff7e67;
 }
-
-/* Individual category content section */
-.taxonomy__section {
-  margin-bottom: 4rem;
-}
-
-/* Entry styling */
-.entries-list .list__item {
-  padding: 1rem;
-  border-bottom: 1px solid #222;
-}
-

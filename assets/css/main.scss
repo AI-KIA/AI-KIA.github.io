@@ -125,3 +125,10 @@ img {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
+body.layout-categories .page__content {
+  max-width: 1200px;
+  padding: 3rem 2rem;
+  background-color: transparent; /* optional: remove background if it feels boxed */
+  box-shadow: none;
+}
+

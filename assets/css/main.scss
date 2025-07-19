@@ -70,13 +70,6 @@ code, pre {
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-body.categories .page__content {
-  max-width: 1200px;
-  padding: 3rem 2rem;
-  background-color: transparent; /* optional: remove background if it feels boxed */
-  box-shadow: none;
-}
-
 /* Sidebar widgets */
 .sidebar {
   background: #101010 !important;
@@ -137,5 +130,51 @@ body.layout-categories .page__content {
   padding: 3rem 2rem;
   background-color: transparent; /* optional: remove background if it feels boxed */
   box-shadow: none;
+}
+
+/* Make the category page wider */
+.archive {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Style the tag cloud/grid better */
+.taxonomy__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.taxonomy__index li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #30e3ca;
+  padding: 0.5rem 1rem;
+  background-color: #1b1b1b;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.taxonomy__index li a:hover {
+  background-color: #262626;
+  color: #ff7e67;
+}
+
+/* Individual category content section */
+.taxonomy__section {
+  margin-bottom: 4rem;
+}
+
+/* Entry styling */
+.entries-list .list__item {
+  padding: 1rem;
+  border-bottom: 1px solid #222;
 }
 

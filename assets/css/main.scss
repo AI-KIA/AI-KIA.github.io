@@ -70,6 +70,13 @@ code, pre {
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
+body.categories .page__content {
+  max-width: 1200px;
+  padding: 3rem 2rem;
+  background-color: transparent; /* optional: remove background if it feels boxed */
+  box-shadow: none;
+}
+
 /* Sidebar widgets */
 .sidebar {
   background: #101010 !important;

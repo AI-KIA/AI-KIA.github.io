@@ -1,6 +1,5 @@
 ---
 layout: home
-author_profile: true
 ---
 
 Welcome to the AI KIA Blog — a hub for exploring how AI replaces and augments human work.

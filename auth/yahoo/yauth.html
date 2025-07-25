@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
-  <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://api.login.yahoo.com https://fantasysports.yahooapis.com https://mangodeploy.com https://www.google-analytics.com https://ups.analytics.yahoo.com;">
+  <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://api.login.yahoo.com https://fantasysports.yahooapis.com https://mangodeploy.com https://ups.analytics.yahoo.com;">
   <title>Sign in with Yahoo - Stateezer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
@@ -43,22 +43,22 @@
   
 
 <script>
-  function startYahooLogin() {
-    const clientId = "dj0yJmk9Q3pHdTVWNlhmNERxJmQ9WVdrOVlqZzFWWEZwV0ZnbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTFl";
-    const redirectUri = "https://mangodeploy.com/auth/yahoo/callback.html";
+function startYahooLogin() {
+  const clientId = "dj0yJmk9Q3pHdTVWNlhmNERxJmQ9WVdrOVlqZzFWWEZwV0ZnbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTFl";
+  const redirectUri = "https://mangodeploy.com/auth/yahoo/callback.html";
 
-    // Get origin from query param or fallback
-    const origin = new URLSearchParams(window.location.search).get("origin") || document.referrer || "https://stateezer.com";
-    const redirectWithOrigin = `${redirectUri}?origin=${encodeURIComponent(origin)}`;
+  const origin = new URLSearchParams(window.location.search).get("origin") || document.referrer || "https://mangodeploy.com";
+  sessionStorage.setItem("origin", origin);
 
-    const url = new URL("https://api.login.yahoo.com/oauth2/request_auth");
-    url.searchParams.set("client_id", clientId);
-    url.searchParams.set("redirect_uri", redirectWithOrigin);
-    url.searchParams.set("response_type", "code");
-    url.searchParams.set("language", "en-us");
+  const url = new URL("https://api.login.yahoo.com/oauth2/request_auth");
+  url.searchParams.set("client_id", clientId);
+  url.searchParams.set("redirect_uri", redirectUri);
+  url.searchParams.set("response_type", "code");
+  url.searchParams.set("language", "en-us");
 
-    window.location.href = url.toString();
-  }
+  window.location.href = url.toString();
+}
+
 </script>
 
 </body>

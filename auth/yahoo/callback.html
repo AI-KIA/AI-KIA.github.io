@@ -50,7 +50,7 @@
       document.getElementById("status").textContent = "You're signed in. Redirecting…";
       // Redirect back to app with optional cleanup route
       setTimeout(() => {
-        window.location.href = `${origin}/auth/finish`;
+        window.location.href = `${origin}/`;
       }, 1500);
     } catch (err) {
       document.getElementById("status").textContent = "Authentication failed. " + err.message;

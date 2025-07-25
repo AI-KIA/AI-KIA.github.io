@@ -40,8 +40,15 @@
   <p>Continue with your Yahoo account to use Stateezer.</p>
   <button onclick="startYahooLogin()">Sign in with Yahoo</button>
 
+  
+
   <script>
     function startYahooLogin() {
+    // Get origin from query param or fallback to referrer (when local)
+      const origin = new URLSearchParams(window.location.search).get("origin") || document.referrer || "https://stateezer.com";
+    // Persist the origin as a query param in the redirect URI
+      const redirectWithOrigin = `${redirectUri}?origin=${encodeURIComponent(origin)}`;
+
       const clientId = "dj0yJmk9Q3pHdTVWNlhmNERxJmQ9WVdrOVlqZzFWWEZwV0ZnbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTFl";
       const redirectUri = "https://mangodeploy.com/auth/yahoo/callback.html";
       const url = new URL("https://api.login.yahoo.com/oauth2/request_auth");

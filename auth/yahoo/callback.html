@@ -29,6 +29,7 @@
     async function completeYahooAuth() {
       const params = new URLSearchParams(window.location.search);
       const code = params.get("code");
+      const origin = params.get("origin") || "https://stateezer.com";
 
       if (!code) {
         document.getElementById("status").textContent = "Missing Yahoo authorization code.";
@@ -36,7 +37,8 @@
       }
 
       try {
-        const callbackUrl = `/auth/yahoo/callback?code=${encodeURIComponent(code)}`;
+        // Forward code and origin to your Cloudflare Worker callback
+        const callbackUrl = `/auth/yahoo/callback?code=${encodeURIComponent(code)}&origin=${encodeURIComponent(origin)}`;
         const res = await fetch(callbackUrl, {
           method: "GET",
           credentials: "include"
@@ -48,13 +50,16 @@
         }
 
         document.getElementById("status").textContent = "You're signed in. Redirecting…";
+
+        // Redirect user back to original app domain
         setTimeout(() => {
-          window.location.href = "https://stateezer.com/"; // change as needed
+          window.location.href = `${origin}/auth/finish`;
         }, 1500);
       } catch (err) {
         document.getElementById("status").textContent = "Authentication failed. " + err.message;
       }
     }
+
     completeYahooAuth();
   </script>
 </body>

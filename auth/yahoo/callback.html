@@ -29,7 +29,7 @@
     async function completeYahooAuth() {
       const params = new URLSearchParams(window.location.search);
       const code = params.get("code");
-      const origin = params.get("origin") || "https://stateezer.com";
+      const origin = params.get("origin") || "https://mangodeploy.com";
 
       if (!code) {
         document.getElementById("status").textContent = "Missing Yahoo authorization code.";

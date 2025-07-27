@@ -26,37 +26,24 @@
   <div class="status" id="status">Please wait…</div>
 
 <script>
-  async function completeYahooAuth() {
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
+  // In both callback.html files, REPLACE the fetch approach:
+async function completeYahooAuth() {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
 
-    if (!code) {
-      document.getElementById("status").textContent = "Missing Yahoo authorization code.";
-      return;
-    }
-    // Recover origin from sessionStorage (fallback to default)
-    const origin = sessionStorage.getItem("origin") || "https://mangodeploy.com";
-    try {
-      // Send the code and origin to the worker via query param or header
-      const callbackUrl = `/auth/yahoo/callback?code=${encodeURIComponent(code)}&origin=${encodeURIComponent(origin)}`;
-      const res = await fetch(callbackUrl, {
-        method: "GET",
-        credentials: "include"
-      });
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Callback failed (${res.status}): ${text}`);
-      }
-      document.getElementById("status").textContent = "You're signed in. Redirecting…";
-      // Redirect back to app with optional cleanup route
-      setTimeout(() => {
-        window.location.href = `${origin}`;
-      }, 1500);
-    } catch (err) {
-      document.getElementById("status").textContent = "Authentication failed. " + err.message;
-    }
+  if (!code) {
+    document.getElementById("status").textContent = "Missing Yahoo authorization code.";
+    return;
   }
-  completeYahooAuth();
+  
+  const origin = sessionStorage.getItem("origin") || "https://stateezer.com";
+  
+  // DON'T use fetch - just redirect!
+  const callbackUrl = `/auth/yahoo/callback?code=${encodeURIComponent(code)}&origin=${encodeURIComponent(origin)}`;
+  
+  // Direct browser navigation - no CORS issues
+  window.location.href = callbackUrl;
+}
 </script>
 
 </body>

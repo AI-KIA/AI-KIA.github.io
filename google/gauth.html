@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
-  <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://mangodeploy.com https://google.com;">
+  <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://accounts.google.com https://mangodeploy.com;">
   <title>Sign in with Google</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
@@ -44,6 +44,7 @@
 function startGoogleLogin() {
   const clientId = "420228495268-ccml8gtao69sphl9lrratq81ngudjimm.apps.googleusercontent.com";
   const redirectUri = "https://mangodeploy.com/google/callback.html";
+
   const origin = new URLSearchParams(window.location.search).get("origin") || document.referrer || "https://mangodeploy.com";
   sessionStorage.setItem("origin", origin);
 

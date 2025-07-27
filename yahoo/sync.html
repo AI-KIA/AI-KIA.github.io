@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yahoo Fantasy Sync Complete</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f6fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+    }
+    .status {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Importing your fantasy teams…</h1>
+  <div class="status" id="status">Please wait while we collect your team data…</div>
+
+<script>
+async function completeYahooSync() {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
+
+  if (!code) {
+    document.getElementById("status").textContent = "Missing Yahoo authorization code.";
+    return;
+  }
+  
+  const origin = sessionStorage.getItem("origin") || "https://mangodeploy.com";
+  
+  // Direct browser navigation to sync endpoint - no CORS issues
+  const callbackUrl = `/auth/yahoo/sync?code=${encodeURIComponent(code)}&origin=${encodeURIComponent(origin)}`;
+  
+  window.location.href = callbackUrl;
+}
+
+// Actually call the function!
+completeYahooSync();
+</script>
+
+</body>
+</html>

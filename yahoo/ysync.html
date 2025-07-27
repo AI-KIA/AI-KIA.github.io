@@ -53,7 +53,8 @@ function startYahooSync() {
   url.searchParams.set("redirect_uri", redirectUri);
   url.searchParams.set("response_type", "code");
   url.searchParams.set("language", "en-us");
-  url.searchParams.set("scope", "openid profile email fantasy-read");
+  // Request fantasy sports read permission
+  url.searchParams.set("scope", "openid profile email fspt‑r");
 
   window.location.href = url.toString();
 }

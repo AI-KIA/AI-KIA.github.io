@@ -42,7 +42,7 @@
 
 <script>
 function startYahooSync() {
-  const clientId = "dj0yJmk9N3lzdG9JY3RaV01TJmQ9WVdrOVQxQlJibXRPUmpZbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTVh";
+  const clientId = "dj0yJmk9bmUxc2pQWEhEY0JQJmQ9WVdrOVVXaE5ZMGRIYW1FbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWI2";
   const redirectUri = "https://mangodeploy.com/yahoo/sync.html";
 
   const origin = new URLSearchParams(window.location.search).get("origin") || document.referrer || "https://mangodeploy.com";
@@ -54,7 +54,7 @@ function startYahooSync() {
   url.searchParams.set("response_type", "code");
   url.searchParams.set("language", "en-us");
   // Request fantasy sports read permission
-  url.searchParams.set("scope", "openid email fspt-w");
+  url.searchParams.set("scope", "openid email profile fspt-w");
 
   window.location.href = url.toString();
 }
